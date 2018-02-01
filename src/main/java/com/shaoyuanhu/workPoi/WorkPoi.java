@@ -1,18 +1,12 @@
-package com.shaoyuanhu.test.workPoi;
+package com.shaoyuanhu.workPoi;
 
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Test;
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -26,7 +20,7 @@ public class WorkPoi {
     /**
      * 所有人本月的考勤数据
      */
-    private static HashMap<String, List<WorkTime>> allData;
+    public static HashMap<String, List<WorkTime>> allData;
     /** 需要统计考勤的所有人 */
     //private static String[] allPeople = {"刘杰", "张开伟", "王宏建", "雷思琦", "徐鑫", "庄春旭", "赵子光", "姚亚鹏", "冀湘元", "苏雨然", "杨波", "王文波", "肖艳芳", "方明飞", "崔景源", "关宇威", "季鹏宇", "张成", "宋婧", "赵雅轩", "侯星男", "曹名瑞", "王磊", "吴倍宗", "张佳男", "庄智玲", "王凤英", "韩星"};
     /**
@@ -70,7 +64,7 @@ public class WorkPoi {
         }
     }
 
-    private static XSSFWorkbook createExcel() {
+    public static XSSFWorkbook createExcel() {
         XSSFWorkbook wb = new XSSFWorkbook();
         try {
             XSSFSheet sheet = wb.createSheet("考勤总结");
@@ -185,7 +179,7 @@ public class WorkPoi {
                     if (workTime.getName()!=null) {
                         List<WorkTime> workTimes = allData.get(workTime.getName());
                         if (workTimes==null) {
-                            System.out.println(workTime.getName());
+//                            System.out.println(workTime.getName());
                             List<WorkTime> list = new ArrayList<>();
                             list.add(workTime);
                             allData.put(workTime.getName(),list);

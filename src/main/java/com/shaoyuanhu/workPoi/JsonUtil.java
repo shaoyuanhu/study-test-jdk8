@@ -1,4 +1,4 @@
-package com.shaoyuanhu.test.workPoi;
+package com.shaoyuanhu.workPoi;
 
 
 import org.codehaus.jackson.JsonParseException;
