@@ -8,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -48,8 +49,10 @@ public class WorkPoi {
     }
 
     public static void main(String[] args) {
-        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\admin\\Desktop\\考勤\\2018.1.xlsx");
-             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\admin\\Desktop\\考勤\\2018.1总结.xlsx");
+        //输出当前路径
+        //System.out.println(new File(".").getAbsolutePath());
+        try (FileInputStream fileInputStream = new FileInputStream("./workExcel/2018.1.xlsx");
+             FileOutputStream fileOutputStream = new FileOutputStream("./workExcel/2018.1总结.xlsx");
         ) {
             boolean readSuccess = readExcel(fileInputStream);
             if (readSuccess) {
